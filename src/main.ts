@@ -12,4 +12,18 @@ In tutti gli altri casi: stampa “Tipo non supportato”
     Se è una Promise: attendi che si risolva e stampa il valore del resolve.
 */
 
-console.log('ciao')
+let dato: unknown
+
+if (typeof dato === 'string') {
+  console.log(dato.toUpperCase())
+} else if (typeof dato === 'number') {
+  console.log(dato * 2)
+} else if (typeof dato === 'boolean') {
+  dato === true ? console.log('Yes') : console.log('No')
+} else if (dato === 'null') {
+  console.log('Il dato è vuoto')
+} else if (Array.isArray(dato)) {
+  console.log(`La lunghezza dell'array è ${dato.length}`)
+} else {
+  console.log('Tipo non supportato')
+}
