@@ -19,11 +19,13 @@ if (typeof dato === 'string') {
 } else if (typeof dato === 'number') {
   console.log(dato * 2)
 } else if (typeof dato === 'boolean') {
-  dato === true ? console.log('Yes') : console.log('No')
+  console.log(dato ? 'Yes' : 'No')
 } else if (dato === 'null') {
-  console.log('Il dato è vuoto')
+  console.log(dato, 'Il dato è vuoto')
 } else if (Array.isArray(dato)) {
   console.log(`La lunghezza dell'array è ${dato.length}`)
+} else if (dato instanceof Promise) {
+  dato.then((msg) => console.log(msg))
 } else {
   console.log('Tipo non supportato')
 }
